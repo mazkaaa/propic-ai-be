@@ -29,9 +29,6 @@ export class AuthController {
       secure: false,
     });
 
-    return res.json({
-      email: userData.email,
-      access_token: token.access_token,
-    });
+    res.redirect('http://localhost:3000' + '/auth?token=' + token.access_token);
   }
 }

@@ -20,7 +20,7 @@ import { PacksModule } from './packs/packs.module';
       username: process.env.DATABASE_USERNAME,
       entities: [User],
       database: process.env.DATABASE_NAME,
-      synchronize: false,
+      synchronize: true,
       logging: true,
     }),
     UserModule,
