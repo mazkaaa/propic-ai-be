@@ -11,6 +11,9 @@ export class User {
   @Column({ type: 'varchar', length: 40 })
   email: string;
 
+  @Column({ type: 'varchar' })
+  password: string;
+
   @Column({ type: 'enum', enum: ['male', 'female', 'unspecified'] })
   /**
    * m - male
@@ -27,4 +30,7 @@ export class User {
 
   @Column({ type: 'boolean' })
   is_admin: boolean;
+
+  @Column({ type: 'boolean' })
+  is_use_google: boolean;
 }

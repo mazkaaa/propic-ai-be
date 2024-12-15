@@ -9,6 +9,12 @@ export class SignInDto {
   email: string;
 
   /**
+   * Password of the user
+   * @example "password"
+   */
+  password: string;
+
+  /**
    * Access token of the user
    * @example "123456789"
    */

@@ -12,7 +12,15 @@ export class CreateUserDto {
    * @example "johndoe@gmail.com"
    */
   @IsEmail()
+  @IsNotEmpty()
   email: string;
+
+  /**
+   * User password
+   * @example "password"
+   */
+  @IsString()
+  password: string;
 
   /**
    * Gender
@@ -31,4 +39,8 @@ export class CreateUserDto {
   @IsNotEmpty()
   @IsBoolean()
   is_admin: boolean;
+
+  @IsNotEmpty()
+  @IsBoolean()
+  is_use_google: boolean;
 }

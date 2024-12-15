@@ -17,6 +17,7 @@ export class UserService {
     user.gender = createUserDto.gender;
     user.is_active = createUserDto.is_active;
     user.is_admin = createUserDto.is_admin;
+    user.password = createUserDto.password;
     return this.userRepository.save(user);
   }
 

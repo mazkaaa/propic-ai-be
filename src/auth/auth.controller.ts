@@ -21,7 +21,11 @@ export class AuthController {
       picture: string;
       accessToken: string;
     } = req.user;
-    const token = await this.authService.signIn(userData);
+    const token = await this.authService.signInGoogle({
+      email: userData.email,
+      accessToken: userData.accessToken,
+      password: '',
+    });
 
     res.cookie('access_token', token, {
       maxAge: 2592000000,
@@ -29,6 +33,8 @@ export class AuthController {
       secure: false,
     });
 
-    res.redirect('http://localhost:3000' + '/auth?token=' + token.access_token);
+    res.redirect(
+      'http://localhost:3001' + '/auth/google?token=' + token.access_token,
+    );
   }
 }
